@@ -1,0 +1,17 @@
+n = int(input())
+v = [0] * n
+ordenado = False
+
+itens_linha = input().split(" ")
+for i in range(n):
+    v[i] = int(itens_linha[i])
+
+for i in range(0, n, 2):
+    if i < n-1:
+        if v[i] <= v[i+1] :
+            ordenado = True
+        
+if ordenado == True:
+    print("SIM")
+else:
+    print("NAO")
