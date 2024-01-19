@@ -1,0 +1,3 @@
+def imc(peso,altura):
+  x = peso/(altura*altura)
+  return x
