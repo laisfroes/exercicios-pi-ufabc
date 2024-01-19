@@ -1,0 +1,20 @@
+n = int(input())
+x = int(input())
+soma = x
+maior = x
+menor = x
+for i in range(0,n-1,1):
+    w = int(input())
+    soma += w
+    
+    if w > maior:
+        maior = w
+    if w < menor:
+        menor = w
+
+media = soma/n
+
+print(soma)
+print("%.2f" %media)
+print(menor)
+print(maior)
