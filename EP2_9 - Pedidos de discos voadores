@@ -1,0 +1,33 @@
+codigo = int(input())
+
+origem = codigo//10000
+
+destino = codigo//100
+destino = destino%100
+
+modelo = codigo%100
+
+if origem == 80:
+    print("Marte")
+elif origem == 81:
+    print("Saturno")
+elif origem == 90:
+    print("Netuno")
+elif origem == 91:
+    print("HD21749b")
+    
+if destino == 80:
+    print("Marte")
+elif destino == 81:
+    print("Saturno")
+elif destino == 90:
+    print("Netuno")
+elif destino == 91:
+    print("HD21749b")
+    
+if modelo == 60:
+    print("A6000")
+elif modelo == 61:
+    print("B7500")
+elif modelo == 62:
+    print("C9000")
