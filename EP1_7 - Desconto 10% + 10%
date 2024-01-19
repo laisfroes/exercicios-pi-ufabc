@@ -1,0 +1,6 @@
+total = float(input())
+desconto1 = total*0.1
+valor1 = total - desconto1
+desconto2 = valor1*0.1
+desconto = total-desconto1-desconto2
+print("%.2f" %desconto)
