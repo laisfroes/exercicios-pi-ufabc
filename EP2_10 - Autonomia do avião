@@ -1,0 +1,30 @@
+carga = float(input())
+Ax = float(input())
+Ay = float(input())
+Bx = float(input())
+By = float(input())
+
+dAB = (((Bx-Ax)**2)+((By-Ay)**2))**0.5
+print("{:.2f}".format(dAB))
+
+if carga <= 50000:
+    if dAB <= 18000:
+        print("SIM")
+    elif dAB > 18000 and dAB <= (18000 + 18000*0.1):
+        print("TALVEZ")
+    else:
+        print("NAO")
+if carga >= 50001 and carga <= 200000:
+    if dAB <= 9000:
+        print("SIM")
+    elif dAB > 9000 and dAB <= (9000 + 9000*0.1):
+        print("TALVEZ")
+    else:
+        print("NAO")
+if carga >= 200001 and carga <= 250000:
+    if dAB <= 3000:
+        print("SIM")
+    elif dAB > 3000 and dAB <= (3000 + 3000*0.1):
+        print("TALVEZ")
+    else:
+        print("NAO")
