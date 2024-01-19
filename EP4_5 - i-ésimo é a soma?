@@ -1,0 +1,17 @@
+n = int(input())
+vetor = list()
+soma = 0
+for i in range(n):
+    x = int(input())
+    vetor.append(x)
+    soma += x
+    
+indice = int(input())
+
+soma -= vetor[indice]
+
+    
+if  vetor[indice] == soma:
+    print("Sim")
+else:
+    print("Nao")
