@@ -1,0 +1,18 @@
+teste1 = float(input())
+teste2 = float(input())
+teste3 = float(input())
+P1 = float(input())
+P2 = float(input())
+T = (teste1+teste2+teste3)/3
+NF= 0.2*T+0.4*P1+0.4*P2
+print("%.2f" %NF)
+if NF >= 9.0 and NF <= 10.0:
+    print("A")
+if NF >= 7.5 and NF < 9.0: 
+    print("B")
+if NF >= 6.0 and NF < 7.5:
+    print("C")
+if NF >= 5.0 and NF < 6.0:
+    print("D")
+if NF < 5:
+    print("F")
