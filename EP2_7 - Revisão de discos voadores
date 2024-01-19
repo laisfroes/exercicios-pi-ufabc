@@ -1,0 +1,24 @@
+ano = int(input())
+motor = int(input())
+distancia = int(input())
+
+if ano >= 1901 and ano <= 2000:
+    if motor == 100 or motor == 101:
+        print("SIM")
+    else:
+        print("NAO")
+elif ano >= 2001 and ano <= 2020:
+    if distancia > 5000:
+        print("SIM")
+    else:
+        print("NAO")
+elif ano == 2021:
+    if motor == 200 or motor == 201:
+        if distancia > 200:
+            print("SIM")
+        else:
+            print("NAO")
+    else:
+        print("NAO")
+else:
+    print("NAO")
