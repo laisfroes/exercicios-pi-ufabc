@@ -1,0 +1,21 @@
+def inserir():
+    v = list()
+    i = 0
+    for i in range(10):
+        x = int(input())
+        v += [x]
+        i += 1
+    return v
+
+def imprimir(v):
+    for elemento in v:
+        print(elemento, end=" ")
+    print(sep='\n')
+    
+def shift(v):
+    x = v[9]
+    i = 9
+    while i > 0:
+        v[i] = v[i-1]
+        i -= 1
+    v[0] = x
