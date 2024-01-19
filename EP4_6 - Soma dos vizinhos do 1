@@ -1,0 +1,19 @@
+n = int(input())
+vetor = list()
+soma = 0
+
+for i in range(n):
+    elementos = int(input())
+    vetor.append(elementos)
+
+for j in range(n):
+    if vetor[j] == 1:
+        if j == 0:
+            soma += vetor[j+1]
+        elif j != 0 and j < n-1:
+            soma += vetor[j-1]
+            soma += vetor[j+1]
+        elif j == n-1:
+            soma += vetor[j-1]
+            
+print(soma)
