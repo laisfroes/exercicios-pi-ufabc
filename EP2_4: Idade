@@ -1,0 +1,31 @@
+dia1 = int(input())
+mes1 = int(input())
+ano1 = int(input())
+dia2 = int(input())
+mes2 = int(input())
+ano2 = int(input())
+
+if dia1 >= dia2 and mes1 >= mes2:
+    idade = ano1-ano2
+else:
+    idade = (ano1-ano2)-1
+
+print(idade)
+
+if dia1 == dia2 and mes1 == mes2:
+    print("Parabéns pelo seu aniversário!")
+
+if idade >= 0 and idade <= 11:
+    print("Visite a sessão de brincadeiras!")
+    
+if idade >= 12 and idade <= 18:
+    print("Confira as dinâmicas de grupo!")
+    
+if idade >= 19 and idade <= 30:
+    print("Confira as rodas de conversa!")
+    
+if idade > 30:
+    print("Não deixe de assistir às palestras!")
+
+if idade >= 60 and idade <= 69:
+    print("E participe também da maratona da maturidade!")
