@@ -1,0 +1,16 @@
+temperatura = float(input())
+
+if temperatura < -20:
+    print("Muito Baixa")
+
+if temperatura >= -20 and temperatura <= 30:
+    print("Baixa")
+    
+if temperatura > 30 and temperatura < 200:
+    print("Normal")
+
+if temperatura >= 200 and temperatura <= 250:
+    print("Alta")
+    
+if temperatura > 250:
+    print("Muito Alta")
