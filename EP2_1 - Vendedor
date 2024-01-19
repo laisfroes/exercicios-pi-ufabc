@@ -1,0 +1,8 @@
+salario = float(input())
+vendas = float(input())
+comissao = vendas*0.2
+print("%.2f" %comissao)
+if comissao >= salario/2:
+    print("Atingiu meta de vendas")
+else:
+    print("Nao atingiu meta de vendas")
