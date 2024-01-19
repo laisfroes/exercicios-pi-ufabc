@@ -1,0 +1,20 @@
+entrada = int(input())
+saida = 0
+
+digito = entrada % 10
+digito = digito % 10
+saida = saida + digito*1000
+
+digito = (entrada//10) % 10
+digito = digito % 10
+saida = saida + (digito * 100)
+
+digito = (entrada//100) % 10
+digito = digito % 10
+saida = saida + (digito * 10)
+
+digito = entrada//1000
+digito = digito % 10
+saida = saida + digito
+
+print("%04d" %saida)
