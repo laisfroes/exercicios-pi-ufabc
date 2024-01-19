@@ -1,0 +1,6 @@
+n = int(input())
+while n:
+    digito = n%10
+    if digito < 10:
+        print(digito)
+        n = n//10
