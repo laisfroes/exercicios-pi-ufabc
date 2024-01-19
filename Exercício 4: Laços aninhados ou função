@@ -1,0 +1,39 @@
+n = int(input())
+maior = n
+soma = 0
+digito = 0
+
+x = 3
+while n != 0:
+    if n > 9:
+        while n > 0:
+            digito = n%10
+            soma += digito
+            n = n//10
+
+    else:
+        soma += n
+    n = int(input())
+    if n > maior:
+        maior = n
+        
+print(maior)    
+
+if maior%2 == 0:    
+    while maior%2 == 0:
+        print("2")
+        maior = maior/2
+if maior%2 != 0:
+        if maior%x == 0:            
+            while maior%x == 0:
+                print(x)
+                maior = maior/x
+        elif maior%x != 0:
+            while maior%x != 0 and maior != 1:
+                x = x+2            
+                if maior%x == 0:            
+                    while maior%x == 0:
+                        print(x)
+                        maior = maior/x
+                
+print(soma)
