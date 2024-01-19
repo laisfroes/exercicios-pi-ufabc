@@ -1,0 +1,24 @@
+n = int(input())
+
+A = [0] * n
+itens_linha = input().split(" ")
+for i in range(n):
+    A[i] = int(itens_linha[i])
+    
+B = [0] * n
+itens_linha = input().split(" ")
+for i in range(n):
+    B[i] = int(itens_linha[i])
+
+multiplo = 0
+
+divisao = B[0]/A[0]
+
+for i in range(n):
+    if B[i]/A[i] == divisao:
+        multiplo += 1
+        
+if multiplo == n:
+    print("SIM")
+else:
+    print("NAO")
