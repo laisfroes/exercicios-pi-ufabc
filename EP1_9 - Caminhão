@@ -1,0 +1,9 @@
+x = int(input())
+A = x//500
+B = (x%500)//100
+C = (x%100)//25
+D = (x%25)
+print(A)
+print(B)
+print(C)
+print(D)
