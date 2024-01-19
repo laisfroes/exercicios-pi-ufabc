@@ -1,0 +1,27 @@
+n = int(input())
+k = 2*n - 1
+x = n - 1
+y = 1
+cont = 0
+cont1 = 0
+for i in range (0, n):
+    while cont < k:
+        print("-", end="")
+        cont += 1
+        if cont == x:
+            while cont1 < y:
+                print("1", end="")
+                cont1 += 1
+                cont += 1
+            y += 2    
+        
+    x -= 1
+    cont = 0
+    cont1 = 0
+    print(sep='\n')
+    
+    if x == 0:
+        while cont1 < y:
+                print("1", end="")
+                cont1 += 1
+                cont += 1
