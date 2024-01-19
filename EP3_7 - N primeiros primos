@@ -1,0 +1,21 @@
+n = int(input())
+primos_encontrados = 0
+numero = 2
+x = 3
+while primos_encontrados < n:
+    if numero == 2:
+        primos_encontrados += 1
+        print(numero)
+    numero +=1
+    if numero == x:
+        primos_encontrados += 1
+        print(numero)
+    if numero%2 != 0:
+        x = 3
+        while numero != x :            
+            if numero%x == 0:
+                break
+            x += 2
+            if numero == x:
+                primos_encontrados += 1
+                print(numero)
