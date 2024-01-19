@@ -1,0 +1,17 @@
+n = int(input())
+v = [0] * n
+
+itens_linha = input().split(" ")
+for i in range(n):
+    v[i] = int(itens_linha[i])
+    
+v_novo = list()
+
+for elemento in v:
+    for i in range(n):
+        if v[i] == elemento:
+            if elemento not in v_novo:
+                v_novo.append(elemento)
+                
+for elemento in v_novo:
+    print(elemento, end=' ')
