@@ -1,0 +1,7 @@
+x = int(input())
+y = float(input())
+z = float(input())
+
+print("Primeiro numero =", x)
+print("%.2f eh o segundo numero" %y)
+print("Finalmente %.3f eh o terceiro numero" %z)
