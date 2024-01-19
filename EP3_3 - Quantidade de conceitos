@@ -1,0 +1,35 @@
+n = int(input())
+x = 0
+a = 0
+b = 0
+c = 0
+d = 0
+f = 0
+media = 0
+
+while n > x:
+    notas = int(input())
+    media += notas
+    x += 1
+    
+
+    
+    if notas >= 9 and notas <= 10:
+        a += 1
+    elif notas >= 8 and notas < 9:
+        b += 1
+    elif notas >= 7 and notas < 8:
+        c += 1
+    elif notas >= 5 and notas < 7:
+        d += 1
+    else:
+        f += 1
+        
+media = media/n
+
+print("A:" ,a)
+print("B:" ,b)
+print("C:" ,c)
+print("D:" ,d)
+print("F:" ,f)
+print("Media: %.2f" %(media))
