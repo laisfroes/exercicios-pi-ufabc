@@ -1,0 +1,16 @@
+n = int(input())
+lista = list()
+dupla = 0
+
+for i in range (n):
+    x = float(input())
+    lista.append(x)
+
+for i in range (0, n, 2):
+    if len(lista)%2 == 0:
+        if lista[i] == lista[i+1]:
+            dupla += 2
+if dupla == n:
+    print("Eh um vetor de duplas!")
+else:
+    print("Nao eh um vetor de duplas!")
