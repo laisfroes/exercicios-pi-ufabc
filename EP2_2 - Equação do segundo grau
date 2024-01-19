@@ -1,0 +1,21 @@
+a = int(input())
+b = int(input())
+c = int(input())
+import math
+delta = b**2 - 4*a*c
+if delta < 0:
+    print("Sem solucao real!")
+    print("Delta = %.2f" %delta)
+else:    
+    r = math.sqrt(delta)
+    raiz1 = (-b + r)/(2*a)
+    raiz2 = (-b - r)/(2*a)
+    if delta == 0:
+        print("x = %.2f" %raiz1)
+    else:
+        if raiz1 < raiz2:
+            print("x1 = %.2f" %raiz1)
+            print("x2 = %.2f" %raiz2)
+        else:
+            print("x1 = %.2f" %raiz2)
+            print("x2 = %.2f" %raiz1)
