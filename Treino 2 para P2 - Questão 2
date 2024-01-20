@@ -1,0 +1,38 @@
+def multiplica_um (matriz : list ) -> int:
+    mult = 1
+    for i in range(7):
+        for j in range(12):
+            if i%2 == 0:
+                if j%2 != 0:
+                    if matriz[i][j]%2 == 0:
+                        mult *= matriz[i][j]
+            if i%2 != 0:
+                if j%2 == 0:
+                    if matriz[i][j]%2 == 0:
+                        mult *= matriz[i][j]
+    return mult
+                
+def multiplica_zero (matriz : list ) -> int:
+    mult = 1
+    for i in range(7):
+        for j in range(12):
+            if i%2 == 0:
+                if j%2 == 0:
+                    if matriz[i][j]%2 == 0:
+                        mult *= matriz[i][j]
+            if i%2 != 0:
+                if j%2 != 0:
+                    if matriz[i][j]%2 == 0:
+                        mult *= matriz[i][j]
+    return mult
+
+A = [[0 for c in range(12)] for l in range(7)]
+for linha in range(7):
+    itens_linha = input().split(" ")
+    for coluna in range(12):
+        A[linha][coluna] = int(itens_linha[coluna])
+               
+pares_um = multiplica_um(A)
+pares_zero = multiplica_zero(A)
+print("multiplicação pares na cor=1 é",pares_um, end="; ")
+print("e na outra cor é",pares_zero)
