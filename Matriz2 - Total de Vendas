@@ -1,0 +1,23 @@
+vendedores = int(input())  #linhas
+meses = int(input())  #colunas
+M = list()
+soma = 0
+for l in range(vendedores):
+    vendas = list()
+    for c in range(meses):
+        vendas.append(float(input()))
+    M.append(vendas)
+    
+for linha in M:
+    for elemento in linha:
+        print("%.2f" %elemento, end=' ')
+    print()
+    
+print("Totais :")
+
+#soma dos elementos das colunas
+for i in range(meses):
+    for j in range(vendedores):
+        soma += M[j][i]
+    print("%.2f" %soma, end=' ')
+    soma = 0
