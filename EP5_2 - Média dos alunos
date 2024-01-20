@@ -1,0 +1,27 @@
+n_linhas = int(input())
+n_colunas = int(input())
+
+matriz = [[0 for c in range(n_colunas)] for l in range(n_linhas)]
+for linha in range(n_linhas):
+    itens_linha = input().split(" ")
+    for coluna in range(n_colunas):
+        matriz[linha][coluna] = float(itens_linha[coluna])
+        
+matriz2 = [[0 for c in range(n_colunas+1)]for l in range(n_linhas)]
+        
+for i in range(n_linhas):
+    for j in range(n_colunas):
+        matriz2[i][j] = matriz[i][j]
+
+soma_coluna = 0
+
+for i in range(n_linhas):
+    for j in range(n_colunas):
+        soma_coluna += matriz[i][j]
+    matriz2[i][n_colunas] = soma_coluna/n_colunas
+    soma_coluna = 0
+    
+for linha in matriz2:
+    for elemento in linha:
+        print("%.2f" %elemento, end=" ")
+    print()
