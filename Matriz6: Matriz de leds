@@ -1,0 +1,57 @@
+def conta_led (matriz : list , i , j : int) -> int:
+    led = matriz[i][j]
+    soma = 0
+    
+    if led == 0:
+        soma += 6
+    elif led != 0:
+        while led > 0:
+            elemento_led = led%10
+            led = led//10
+    
+            if elemento_led == 1:
+                soma += 2
+            if elemento_led == 2 or elemento_led == 3 or elemento_led == 5:
+                soma += 5
+            if elemento_led == 4:
+                soma += 4
+            if elemento_led == 6 or elemento_led == 9 or elemento_led == 0:
+                soma += 6
+            if elemento_led == 7:
+                soma += 3
+            if elemento_led == 8:
+                soma += 7
+            
+    return soma
+    
+def conta_coluna (matriz : list , i : int ) -> int:
+    soma = 0
+    for j in range(len(matriz)):
+        soma += conta_led(matriz, j, i)
+    return soma
+    
+m = int(input())    
+n = int(input())
+
+matriz = [[0 for c in range(n)] for l in range(m)]
+for linha in range(m):
+    itens_linha = input().split(" ")
+    for coluna in range(n):
+        matriz[linha][coluna] = int(itens_linha[coluna])
+        
+soma_colunas = [0] * n
+
+for i in range(n):
+    soma_colunas[i] = coluna = conta_coluna(matriz, i)
+    
+maior = soma_colunas[0]
+
+for i in range(n):
+    if soma_colunas[i] > maior:
+        maior = soma_colunas[i]
+        
+for i in range(n):
+    if soma_colunas[i] == maior:
+        print("coluna" ,i+1, "acende" ,soma_colunas[i], "leds:")
+        for j in range(m):
+            print(matriz[j][i])
