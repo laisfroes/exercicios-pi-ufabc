@@ -1,0 +1,73 @@
+n = int(input())
+
+matriz = [[0 for c in range(n)] for l in range(n)]
+for linha in range(n):
+    itens_linha = input().split(" ")
+    for coluna in range(n):
+        matriz[linha][coluna] = int(itens_linha[coluna])
+        
+def triangular_inferior ( A : list , n : int ) -> bool :
+    triangular = bool
+    
+    for i in range(n):
+        if triangular == False:
+            break
+        for j in range(n):
+            if triangular == False:
+                break
+            if i > j:
+                if A[i][j] == 0:
+                    triangular = True
+                else:
+                    triangular = False
+    return triangular
+    
+def triangular_superior ( A : list , n : int ) -> bool :
+    triangular = bool
+    
+    for i in range(n):
+        if triangular == False:
+            break
+        for j in range(n):
+            if triangular == False:
+                break
+            if i < j:
+                if A[i][j] == 0:
+                    triangular = True
+                else:
+                    triangular = False
+    return triangular
+    
+def imprime_triangular ( A : list , n : int , sup : bool ):
+    if sup == True:
+        for i in range(n):
+            for j in range(n):
+                if i <= j:                
+                    print(A[i][j], end=' ')
+            print()
+            
+    if sup == False:        
+        for i in range(n):
+            for j in range(n):
+                if i >= j:                
+                    print(A[i][j], end=' ')
+            print()
+
+inferior = triangular_inferior(matriz, n)
+superior = triangular_superior(matriz, n)
+
+if inferior == False and superior == False:
+    print("NAO")
+    
+if inferior == True and superior == False:
+    print("SIM")
+    imprime_triangular(matriz, n, True)
+    
+if inferior == False and superior == True:
+    print("SIM")
+    imprime_triangular(matriz, n, False)
+    
+if inferior == True and superior == True:
+    print("SIM")
+    imprime_triangular(matriz, n, True)
+    imprime_triangular(matriz, n, False)
