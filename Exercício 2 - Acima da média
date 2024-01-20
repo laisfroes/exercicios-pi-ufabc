@@ -1,0 +1,23 @@
+n = int(input())
+lista = list()
+lista2 = list()
+soma = 0
+soma2 = 0
+
+for i in range (n):
+    x = float(input())
+    lista.append(x)
+    soma += x
+media = soma/n
+print("%.2f" %media)
+for i in range (n):
+    if lista[i] > media:
+        lista2.append(lista[i])
+        soma2 += lista[i]
+        
+print(len(lista2), end=" ")
+print("%.2f" %soma2)    
+
+if len(lista2) > 0:
+    for elemento in lista2:
+        print(elemento, end=" ")
