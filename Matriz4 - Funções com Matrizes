@@ -1,0 +1,32 @@
+def le_matriz_int ( m : int, n : int ) -> list :
+    M = [[0 for c in range(n)] for l in range(m)]
+    for linha in range(m):
+        itens_lin = input().split(" ")
+        for coluna in range(n):
+            M[linha][coluna] = int(itens_lin[coluna])
+    return M
+
+def exibe_matriz_int ( matriz : list ) : 
+    for linha in matriz:
+        for elemento in linha:
+            print(elemento, end=' ')
+        print()
+
+def media_linha_coluna ( matriz : list , ind : int , linha : bool ) -> float : 
+    soma = 0
+    m = len(matriz)
+    n = len(matriz[0])
+    
+    if linha == True:
+        for elemento in range(n):
+            soma += matriz[ind][elemento]
+        media = soma/n
+        soma = 0
+        return media
+        
+    if linha == False:
+        for elemento in range(m):
+            soma += matriz[elemento][ind]
+        media = soma/m
+        soma = 0
+        return media
