@@ -1,0 +1,22 @@
+n = int(input())
+vetor = [0] * n
+
+itens_linha = input().split(" ")
+for i in range(n):
+    vetor[i] = int(itens_linha[i])
+    
+cont = 0
+vetor_3 = list()
+for elemento in vetor:
+    for i in range(n):
+        if elemento == vetor[i]:
+            cont += 1
+    if cont == 3 and elemento not in vetor_3:
+        vetor_3.append(elemento)
+    cont = 0
+    
+if len(vetor_3) == 0:
+    print("nenhum elemento ocorre exatamente 3 vezes")
+else:
+    for elemento in vetor_3:
+        print(elemento, end=" ")
