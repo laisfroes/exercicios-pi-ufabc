@@ -1,0 +1,61 @@
+def campo_minado ( A : list , linhas , colunas, x, y : int ) -> list:
+    B = [[0 for c in range(colunas)] for l in range(linhas)]
+    b = y
+    cont = 0
+    
+    for i in range(linhas):
+        y = b
+        for j in range(colunas):
+            B[i][j] = A[x][y]
+            y += 1
+        x += 1        
+    
+    for linha in B:
+        for elemento in linha:
+            if elemento == 1:
+                cont += 1
+    return cont
+
+n_linhas = int(input())
+n_colunas = int(input())
+
+matriz = [[0 for c in range(n_colunas)] for l in range(n_linhas)]
+for linha in range(n_linhas):
+    itens_linha = input().split(" ")
+    for coluna in range(n_colunas):
+        matriz[linha][coluna] = int(itens_linha[coluna])
+        
+linha_celula = int(input())
+coluna_celula = int(input())
+
+if linha_celula == 0:
+    if coluna_celula == 0:
+        campo = campo_minado(matriz, 2, 2, 0, 0)
+        
+    elif coluna_celula == n_colunas-1:
+        campo = campo_minado(matriz, 2, 2, 0, coluna_celula-1)
+        
+    elif coluna_celula != 0 and coluna_celula != n_colunas-1:
+        campo = campo_minado(matriz, 2, 3, 0, coluna_celula-1)
+        
+elif linha_celula == n_linhas-1:
+    if coluna_celula == 0:
+        campo = campo_minado(matriz, 2, 2, linha_celula-1, 0)
+        
+    elif coluna_celula == n_colunas-1:
+        campo = campo_minado(matriz, 2, 2, linha_celula-1, coluna_celula-1)
+        
+    elif coluna_celula != 0 and coluna_celula != n_colunas-1:
+        campo = campo_minado(matriz, 2, 3, linha_celula-1, coluna_celula-1)
+        
+elif linha_celula != 0 and linha_celula != n_colunas-1:
+    if coluna_celula == 0:
+        campo = campo_minado(matriz, 3, 2, linha_celula-1, 0)
+        
+    elif coluna_celula == n_colunas-1:
+        campo = campo_minado(matriz, 3, 2, linha_celula-1, coluna_celula-1)
+        
+    elif coluna_celula != 0 and coluna_celula != n_colunas-1:
+        campo = campo_minado(matriz, 3, 3, linha_celula-1, coluna_celula-1)
+            
+print(campo)
