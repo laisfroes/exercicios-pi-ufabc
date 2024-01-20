@@ -1,0 +1,16 @@
+n = int(input())
+v = [0] * n   # cria e inicia uma lista v com n zeros
+
+itens_linha = input().split(" ") # separa os elementos
+
+for i in range(n):   # converte cada elemento em inteiro
+    v[i] = int(itens_linha[i])     # e o atribui à lista v
+    
+contador = [0]*11
+for i in range(11):
+    for elemento in v:
+        if elemento == i:
+            contador[i] += 1
+            
+for i in range(11):
+    print("nota" ,i, ":" ,contador[i])
