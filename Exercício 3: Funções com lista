@@ -1,0 +1,23 @@
+maior = 0
+
+def le_lista_int ( n : int , lista : [int] ) -> [int] :
+    for i in range (n):
+        lista.append(int(input()))
+    return
+
+def exibe_lista_int ( lista: [int] ) : 
+    for i in lista:
+        print(i, end= " ")
+
+def maior_int ( lista: [int] ) -> int :
+    maior = lista[0]
+    for i in lista:
+        if i > maior:
+            maior = i
+    print(maior)
+
+n = int(input())
+lista = list()
+le_lista_int(n, lista)
+maior_int(lista)
+exibe_lista_int(lista)
