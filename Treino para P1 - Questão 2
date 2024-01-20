@@ -1,0 +1,13 @@
+P = int(input())
+TxContagio = float(input())
+i = 0
+Ct0 = 1977
+Ct = 0
+imunizados = 0
+while imunizados <= 0.61*P:
+    Ct = Ct0*TxContagio
+    imunizados += Ct
+    Ct0 = Ct
+    i += 1
+
+print("A cidade conseguiu imunidade coletiva em",i,"dias")
