@@ -1,0 +1,14 @@
+n_lin = int(input())
+n_col = int(input())
+M = [[0 for c in range(n_col)] for l in range(n_lin)]
+for linha in range(n_lin):
+    itens_lin = input().split(" ")
+    for coluna in range(n_col):
+        M[linha][coluna] = int(itens_lin[coluna])
+    
+for i in range(n_lin):
+    for j in range(n_col):
+        if j%2 != 0:
+            M[i][j] = M[i][j]*3
+        print(M[i][j], end=' ')
+    print()
