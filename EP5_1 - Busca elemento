@@ -1,0 +1,21 @@
+linhas = int(input())
+colunas = int(input())
+M = list()
+validador = False
+
+for l in range(linhas):
+    lista = list()
+    for c in range(colunas):
+        lista.append(int(input()))
+    M.append(lista)
+    
+num_busca = int(input())
+    
+for i in range(linhas):
+    for j in range(colunas):
+        if M[i][j] == num_busca:
+            print(i+1, j+1)
+            validador = True
+            
+if validador == False:
+    print("-1")
