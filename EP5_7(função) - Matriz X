@@ -1,0 +1,13 @@
+def obter_matriz_x(n):
+    matriz = [[0 for c in range(n)] for l in range(n)]
+    
+    x = n-1
+    y = 0
+    for i in range(n):
+        for j in range(n):
+            if i == j:
+                matriz[i][j] = 1
+        matriz[y][x] = 1
+        x -= 1
+        y += 1
+    return matriz
