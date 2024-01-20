@@ -1,0 +1,44 @@
+n = int(input())
+lista = list()
+for i in range(n):
+    inteiros = int(input())
+    lista.append(inteiros)
+    
+aux = [0]*4 #guardar os valores e indices
+
+if n > 2:
+    menor1 = lista[0]
+    aux[0] = 0 #valores indices   
+    
+    for i in range(n):
+        if menor1 > lista[i]:
+            menor1 = lista[i]
+            aux[0] = i #guardando indice
+            
+    aux[1] = lista[0] #guardando valor antigo
+    lista[0] = menor1 #atualizando primeiro maior valor
+    lista[aux[0]] = aux[1]
+    
+    menor2 = lista[1]
+    aux[2] = 1 
+    
+    for i in range(1,n):
+        if menor2 > lista[i]:
+            menor2 = lista[i]
+            aux[2] = i
+            
+    aux[3] = lista[1] #guardando valor antigo
+    lista[1] = menor2 #atualizando segundo maior valor
+    lista[aux[2]] = aux[3]
+
+    for i in lista:
+        print(i, end=" ")
+        
+elif n == 2:
+    if lista[0]>lista[1]:
+        print(lista[1], lista[0])
+    else:
+        print(lista[0], lista[1])
+        
+elif n == 1:
+    print(lista[0])
