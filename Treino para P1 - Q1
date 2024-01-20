@@ -1,0 +1,8 @@
+resto = 0
+maior = 0
+for i in range (0, 5):
+    n = int(input())
+    resto = n%4
+    if resto > maior:
+        maior = resto
+print(maior)
