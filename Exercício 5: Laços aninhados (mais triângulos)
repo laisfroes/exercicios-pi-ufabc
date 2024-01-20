@@ -1,0 +1,15 @@
+n = int(input())
+cont = 0
+l = n
+x = n
+for i in range (0, n):
+    while cont < l:
+        print("*", end="")
+        cont += 1
+    if cont < x:
+        while cont < x:
+            print("o", end="")
+            cont += 1
+    l -= 1
+    cont = 0
+    print(sep='\n')
