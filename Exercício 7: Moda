@@ -1,0 +1,42 @@
+itens_linha = input().split(" ")
+v = [0] * (len(itens_linha))
+for i in range (len(itens_linha)):
+    v[i] = int(itens_linha[i])
+    
+v_novo = list()
+for elemento in v:
+    if elemento not in v_novo and elemento > 0:
+        v_novo.append(elemento) #lista sem números repetidos
+        
+soma_moda = 0
+rep = [0]
+
+if len(v_novo) > 0:                
+    rep = [0] * len(v_novo)
+    cont = 0
+
+    for i in range(len(v_novo)):
+        for j in v:
+            if v_novo[i] == j:
+                cont += 1
+        rep[i] = cont #conta quantas vezes cada numero se repete e guarda no vetor rep
+        cont = 0
+
+    moda = rep[0]
+
+    for i in range(len(rep)): #define a moda
+        if rep[i] > moda:
+            moda = rep[i]
+
+    for elemento in rep:
+        if elemento == moda: #verifica a quantidade de modas
+            soma_moda += 1
+
+if soma_moda == 1 and len(rep) != 1:
+    print("unimodal")
+elif soma_moda == 2 and len(rep) != 2:
+    print("bimodal")
+elif soma_moda > 2 and len(rep) != soma_moda:
+    print("plurimodal")
+else:
+    print("amodal")
