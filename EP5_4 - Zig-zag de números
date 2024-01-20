@@ -1,0 +1,21 @@
+L = int(input())
+C = int(input())
+M = [[0 for c in range(C)] for l in range(L)]
+cont = 1
+
+for i in range(L):
+    if i%2 == 0:
+        for j in range(C):
+            M[i][j] = cont
+            cont += 1
+    if i%2 != 0:
+        x = C-1
+        for j in range(C):
+            M[i][x] = cont
+            cont += 1
+            x -= 1
+            
+for linha in M:
+    for elemento in linha:
+        print(elemento, end=' ')
+    print()
