@@ -1,0 +1,18 @@
+def comparar_matrizes(matriz1, matriz2):
+    if len(matriz1) == len(matriz2) and len(matriz1[0]) == len(matriz2[0]):
+        m = len(matriz1)
+        n = len(matriz1[0])
+        verifica = bool
+        for i in range(m):
+            if verifica == False:
+                break
+            for j in range(n):
+                if verifica == False:
+                    break
+                if matriz2[i][j] == matriz1[i][j]*2:
+                    verifica = True
+                elif matriz2[i][j] != matriz1[i][j]*2:
+                    verifica = False
+    else:
+        verifica = False
+    return verifica
