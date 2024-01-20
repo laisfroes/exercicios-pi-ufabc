@@ -1,0 +1,30 @@
+n = int(input())
+
+matriz = [[0 for c in range(n)] for l in range(n)]
+for linha in range(n):
+    itens_linha = input().split(" ")
+    for coluna in range(n):
+        matriz[linha][coluna] = int(itens_linha[coluna])
+        
+metade_n = n//2
+
+matriz2 = [[0 for c in range(metade_n)] for l in range(n)]
+
+for i in range(n):
+    x = n-1
+    for j in range(metade_n):
+        matriz2[i][j] = matriz[i][j] + matriz[i][x]
+        x -= 1
+        
+matriz3 = [[0 for c in range(metade_n)] for l in range(metade_n)]
+
+x = n-1
+for i in range(metade_n):
+    for j in range(metade_n):
+        matriz3[i][j] = matriz2[i][j] + matriz2[x][j]
+    x -= 1
+    
+for linha in matriz3:
+    for elemento in linha:
+        print(elemento, end=' ')
+    print()
